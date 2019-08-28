@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Monitors from './components/Monitors';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +11,7 @@ class App extends Component {
       monitorsArray: [],
       key: 'u630058-e28e0007af00faaf27512f11',
     }
+    this.popSound = new Audio('Bubble-pop-sound-effect.mp3');
   }
 
   
@@ -49,8 +49,16 @@ async loadData() {
 
 componentDidMount() {
   this.loadData();
-  setInterval(() => this.loadData(), 5000);
+  setInterval(() => this.loadData(), 10000);
 }
+  componentDidUpdate(){
+    this.state.monitorsArray.forEach(monitor=> {
+      if (monitor.status === 0){
+        this.popSound.play();
+      }
+    });
+
+  }
     render () {
       return (
         <div className="App">

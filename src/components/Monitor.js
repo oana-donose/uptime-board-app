@@ -11,12 +11,13 @@ class Monitor extends Component {
             </div>
         )
     }
+
     whatStatus(props) {
         const status = this.props.status;
         if(status===0) return "paused";
         if(status===1) return "loading";
         if(status===2) return "server up";
-        if(status==8) return "seems down";
+        if(status===8) return "seems down";
         if(status===9) return "server down";
     }
     statusClass(props) {
