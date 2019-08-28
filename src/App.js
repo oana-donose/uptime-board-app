@@ -12,6 +12,8 @@ class App extends Component {
       monitorsArray: [],
       key: 'u630058-e28e0007af00faaf27512f11',
     }
+
+    //this.loadData = this.loadData.bind(this);
   }
 
   
@@ -49,7 +51,7 @@ async loadData() {
 
 componentDidMount() {
   this.loadData();
-  setInterval(this.loadData, 5000);
+  setInterval(() => this.loadData(), 5000);
 }
     render () {
       return (

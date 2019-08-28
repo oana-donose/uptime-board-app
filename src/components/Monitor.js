@@ -5,8 +5,8 @@ class Monitor extends Component {
         console.log("[Monitor] rendering...");
         return (
             <div className="monitor-container">
-                <h1>{this.props.name}</h1>
-                <h2>{this.props.status}</h2>
+                <h3>{this.props.name}</h3>
+                <h3>{this.props.status}</h3>
             </div>
         )
     }
