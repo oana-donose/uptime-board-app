@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Speech from 'speak-tts';
 import './App.css';
 import Monitors from './components/Monitors';
 
@@ -12,7 +13,8 @@ class App extends Component {
       key: 'u630058-e28e0007af00faaf27512f11',
       downMonitorsArray: []
     }
-    this.popSound = new Audio('Bubble-pop-sound-effect.mp3');
+    //this.popSound = new Audio('Bubble-pop-sound-effect.mp3');
+
   }
   async loadData() {
     console.log("loading data...");
@@ -59,7 +61,11 @@ componentDidUpdate(){
       else {
         this.state.downMonitorsArray.push(monitor.friendly_name);
         console.log("added monitor to down array.");
-        this.popSound.play();
+        //this.popSound.play();
+        const speech = new Speech();
+        speech.speak({
+          text: monitor.friendly_name + "is down!"
+        })
       }
     }
     else {
