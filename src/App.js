@@ -10,7 +10,6 @@ class App extends Component {
     this.state = {
       monitorsArray: [],
       key: 'u630058-e28e0007af00faaf27512f11',
-      played: false
     }
     this.popSound = new Audio('Bubble-pop-sound-effect.mp3');
   }
@@ -51,11 +50,6 @@ async loadData() {
 componentDidMount() {
   this.loadData();
   setInterval(() => this.loadData(), 10000);
-  setInterval(() => {
-    this.setState({
-      played: false
-    });
-  }, 180000); //reset sound after 3 minutes
 }
   componentDidUpdate(){
     this.state.monitorsArray.forEach(monitor=> {
