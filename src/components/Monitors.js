@@ -9,7 +9,9 @@ class Monitors extends Component {
             return(
                 <Monitor
                 name={monitor.friendly_name}
-                status={monitor.status}/>
+                status={monitor.status}
+                logs={monitor.logs}
+                uptime={monitor.all_time_uptime_ratio}/>
             );
         });
 

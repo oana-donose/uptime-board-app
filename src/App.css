@@ -2,19 +2,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color:#ecf0f1;
 
 }
 
 .monitor-container {
   background-color: lightblue;
-  border-radius: 1.4em;
+  border-radius: 3px;
   width:17%;
   margin: 1em;
   text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .server-up {
-  border: 0.1em solid rgb(173, 255, 47) ; 
-  background-color: rgba(173,255,47,0.3);
+  border: 0.1em solid #20bf6ab7; 
+  background-color: #20bf6b;
 }
 
 .paused {
@@ -28,8 +30,8 @@
 }
 
 .server-down {
-  background-color: rgba(255,0,0,0.3);
-  border: 0.1em solid rgb(255, 0, 0);
+  background-color: #EA2C25;
+  border: 0.1em solid #EA2C25;
   animation: blinker 1s linear infinite;
 }
 .seems-down {
@@ -40,6 +42,16 @@
 
 @keyframes blinker {
   50% {
-    opacity: 0;
+    opacity: 0.5;
   }
+}
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
+.logo {
+  width: 20%;
 }

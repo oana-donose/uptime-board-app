@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Speech from 'speak-tts';
 import './App.css';
 import Monitors from './components/Monitors';
+import Header from './components/Header';
+
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +31,7 @@ class App extends Component {
           "sec-fetch-mode":"cors"
         },
         body: 
-        `{"api_key":"u630058-e28e0007af00faaf27512f11","all_time_uptime_ratio":1,"response_times_average":1}`
+        `{"api_key":"u630058-e28e0007af00faaf27512f11","all_time_uptime_ratio":1,"response_times_average":1,"logs":1}`
     };
 
   fetch(`https://api.uptimerobot.com/v2/getMonitors?api_key=u630058-e28e0007af00faaf27512f11&format=json&logs=1`, options)
@@ -81,6 +83,7 @@ componentDidUpdate(){
     render () {
       return (
         <div className="App">
+          <Header></Header>
           <Monitors monitors={this.state.monitorsArray}></Monitors>
         </div>
       );
